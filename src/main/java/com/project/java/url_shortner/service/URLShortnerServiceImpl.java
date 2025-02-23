@@ -1,14 +1,16 @@
 package com.project.java.url_shortner.service;
 
 import org.springframework.stereotype.Service;
+import com.project.java.url_shortner.models.TinyURLRequest;
+import com.project.java.url_shortner.models.TinyURLResponse;
 
 @Service
 public class URLShortnerServiceImpl implements URLShortner {
 
     @Override
-    public String shortenURL(String url) {
-        // Logic to shorten the URL
-        return "shortenedURL";
+    public TinyURLResponse shortenURL(TinyURLRequest request) {
+
+        return new TinyURLResponse("shortenedURL");
     }
 
     @Override
