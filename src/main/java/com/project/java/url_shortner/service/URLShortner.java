@@ -1,5 +1,7 @@
 package com.project.java.url_shortner.service;
 
+import java.net.URI;
+
 import com.project.java.url_shortner.models.TinyURLRequest;
 import com.project.java.url_shortner.models.TinyURLResponse;
 
@@ -22,6 +24,6 @@ public interface URLShortner {
      * @param url the shortened URL to be expanded
      * @return the original URL
      */
-    String expandURL(String url);
+    URI expandURL(String url);
 
 }

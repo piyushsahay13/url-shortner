@@ -1,5 +1,7 @@
 package com.project.java.url_shortner.service;
 
+import java.net.URI;
+
 import org.springframework.stereotype.Service;
 import com.project.java.url_shortner.models.TinyURLRequest;
 import com.project.java.url_shortner.models.TinyURLResponse;
@@ -14,9 +16,9 @@ public class URLShortnerServiceImpl implements URLShortner {
     }
 
     @Override
-    public String expandURL(String url) {
+    public URI expandURL(String url) {
         // Logic to expand the URL
-        return "expandedURL";
+        return URI.create("expandedURL");
     }
     
 }

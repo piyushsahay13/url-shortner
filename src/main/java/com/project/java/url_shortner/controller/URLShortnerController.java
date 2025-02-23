@@ -29,8 +29,7 @@ public class URLShortnerController {
     }
 
     @GetMapping()
-    public ResponseEntity<String> expandURL(@RequestParam String url) {
-        String expandedURL = urlShortnerService.expandURL(url);
-        return ResponseEntity.ok(expandedURL);
+    public ResponseEntity<Void> expandURL(@RequestParam String url) {
+        return ResponseEntity.status(302).location(urlShortnerService.expandURL(url)).build();
     }
 }
