@@ -6,5 +6,5 @@ import com.project.java.url_shortner.entitiy.URLStorageEntity;
 
 @Repository
 public interface URLStorageEntitiyRepository extends JpaRepository<URLStorageEntity, String> {
-    
+    URLStorageEntity findByUrlid(String urlid);
 }
