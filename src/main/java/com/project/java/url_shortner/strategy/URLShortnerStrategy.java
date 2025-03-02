@@ -1,4 +1,4 @@
-package com.project.java.url_shortner.service;
+package com.project.java.url_shortner.strategy;
 
 import java.net.URI;
 
@@ -8,7 +8,7 @@ import com.project.java.url_shortner.models.TinyURLResponse;
 /**
  * Service interface for URL shortening and expanding operations.
  */
-public interface URLShortner {
+public interface URLShortnerStrategy {
 
     /**
      * Shortens the given URL.
@@ -17,13 +17,5 @@ public interface URLShortner {
      * @return the shortened URL
      */
     TinyURLResponse shortenURL(TinyURLRequest request);
-
-    /**
-     * Expands the given shortened URL to its original form.
-     *
-     * @param url the shortened URL to be expanded
-     * @return the original URL
-     */
-    URI expandURL(String url);
 
 }

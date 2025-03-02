@@ -1,4 +1,4 @@
-package com.project.java.url_shortner.service;
+package com.project.java.url_shortner.strategy;
 
 import java.net.URI;
 
@@ -7,7 +7,7 @@ import com.project.java.url_shortner.models.TinyURLRequest;
 import com.project.java.url_shortner.models.TinyURLResponse;
 
 @Service
-public class URLShortnerServiceImpl implements URLShortner {
+public class URLShortnerStrategyImpl implements URLShortnerStrategy {
 
     @Override
     public TinyURLResponse shortenURL(TinyURLRequest request) {
@@ -15,10 +15,4 @@ public class URLShortnerServiceImpl implements URLShortner {
         return new TinyURLResponse("shortenedURL");
     }
 
-    @Override
-    public URI expandURL(String url) {
-        // Logic to expand the URL
-        return URI.create("expandedURL");
-    }
-    
 }
