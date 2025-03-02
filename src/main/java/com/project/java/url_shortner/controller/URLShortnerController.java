@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.project.java.url_shortner.models.TinyURLRequest;
 import com.project.java.url_shortner.models.TinyURLResponse;
+import com.project.java.url_shortner.service.TinyURLService;
 import com.project.java.url_shortner.strategy.URLShortnerStrategyImpl;
 
 import jakarta.websocket.server.PathParam;
@@ -18,19 +19,20 @@ import jakarta.websocket.server.PathParam;
 @RestController
 @RequestMapping("/shortner")
 public class URLShortnerController {
+
+    private TinyURLService tinyURLService;
     
-    @Autowired
-    private URLShortnerStrategyImpl urlShortnerService;
-    @Autowired
-    private URLExpandStrategyImpl urlExpandService;
+    public URLShortnerController(tinyURLService tinyURLService) {
+        this.tinyURLService = tinyURLService;
+    }
 
     @PostMapping("/shorten")
     public ResponseEntity<TinyURLResponse> shortenURL(@RequestBody TinyURLRequest request) {
-        return ResponseEntity.ok(urlShortnerService.shortenURL(request));
+        return ResponseEntity.ok(tinyURLService.shortenURL(request));
     }
 
     @GetMapping()
     public ResponseEntity<Void> expandURL(@RequestParam String url) {
-        return ResponseEntity.status(302).location(urlShortnerService.expandURL(url)).build();
+        return ResponseEntity.status(302).location(tinyURLService.expandURL(url)).build();
     }
 }
