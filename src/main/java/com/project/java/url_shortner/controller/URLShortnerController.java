@@ -22,7 +22,7 @@ public class URLShortnerController {
 
     private TinyURLService tinyURLService;
     
-    public URLShortnerController(tinyURLService tinyURLService) {
+    public URLShortnerController(TinyURLService tinyURLService) {
         this.tinyURLService = tinyURLService;
     }
 

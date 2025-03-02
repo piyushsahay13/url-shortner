@@ -5,6 +5,7 @@ import java.net.URI;
 import org.springframework.stereotype.Service;
 
 import com.project.java.url_shortner.models.TinyURLRequest;
+import com.project.java.url_shortner.models.TinyURLResponse;
 import com.project.java.url_shortner.strategy.URLExpandStrategyImpl;
 import com.project.java.url_shortner.strategy.URLShortnerStrategyImpl;
 
@@ -19,8 +20,9 @@ public class TinyURLService {
         this.urlExpandService = urlExpandService;
     }
 
-    public String shortenURL(TinyURLRequest request) {
-        return "shortenedURL";
+    public TinyURLResponse shortenURL(TinyURLRequest request) {
+        
+        return urlShortnerService.shortenURL(request);
     }
 
     public URI expandURL(String url) {
