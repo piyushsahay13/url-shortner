@@ -11,13 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.java.url_shortner.models.TinyURLRequest;
 import com.project.java.url_shortner.models.TinyURLResponse;
 import com.project.java.url_shortner.service.TinyURLService;
-import com.project.java.url_shortner.strategy.URLShortnerStrategyImpl;
+import lombok.extern.slf4j.Slf4j;
 
-import jakarta.websocket.server.PathParam;
-
-
+@Slf4j
 @RestController
-@RequestMapping("/shortner")
 public class URLShortnerController {
 
     private TinyURLService tinyURLService;
@@ -28,6 +25,7 @@ public class URLShortnerController {
 
     @PostMapping("/shorten")
     public ResponseEntity<TinyURLResponse> shortenURL(@RequestBody TinyURLRequest request) {
+        log.info("Recevied request " + request);
         return ResponseEntity.ok(tinyURLService.shortenURL(request));
     }
 

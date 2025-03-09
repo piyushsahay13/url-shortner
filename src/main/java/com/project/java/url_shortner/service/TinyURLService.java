@@ -8,6 +8,7 @@ import com.project.java.url_shortner.models.TinyURLRequest;
 import com.project.java.url_shortner.models.TinyURLResponse;
 import com.project.java.url_shortner.strategy.URLExpandStrategyImpl;
 import com.project.java.url_shortner.strategy.URLShortnerStrategyImpl;
+import com.project.java.url_shortner.utility.UrlShortnerValidator;
 
 @Service
 public class TinyURLService {
@@ -21,7 +22,7 @@ public class TinyURLService {
     }
 
     public TinyURLResponse shortenURL(TinyURLRequest request) {
-        
+        UrlShortnerValidator.validateRequest(request);
         return urlShortnerService.shortenURL(request);
     }
 

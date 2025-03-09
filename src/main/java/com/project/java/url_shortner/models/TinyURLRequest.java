@@ -2,7 +2,6 @@ package com.project.java.url_shortner.models;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import jakarta.annotation.Nonnull;
 import lombok.Data;
 

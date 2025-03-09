@@ -1,7 +1,5 @@
 package com.project.java.url_shortner.strategy;
 
-import java.net.URI;
-
 import com.project.java.url_shortner.models.TinyURLRequest;
 import com.project.java.url_shortner.models.TinyURLResponse;
 
