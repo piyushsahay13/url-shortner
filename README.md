@@ -12,3 +12,8 @@ For this project idea let’s focus on the following features, which you should 
 Ability to pass a long URL as part of the request and get a shorter version of it. You’re free to decide how you’ll perform the shortening .
 Save the shorter and longer versions of the URL in the database to be used later during redirection.
 Configure a catch-all route on your service that gets all the traffic (no matter the URI used), finds the correct longer version and performs a redirection so the user is seamlessly redirected to the proper destination.
+
+Feature to Add
+Custom Url 
+Login User Support
+

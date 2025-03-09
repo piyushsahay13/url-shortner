@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.java.url_shortner.models.TinyURLRequest;
 import com.project.java.url_shortner.models.TinyURLResponse;
 import com.project.java.url_shortner.service.TinyURLService;
+
+import org.springframework.web.bind.annotation.PathVariable;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -29,8 +31,10 @@ public class URLShortnerController {
         return ResponseEntity.ok(tinyURLService.shortenURL(request));
     }
 
-    @GetMapping()
-    public ResponseEntity<Void> expandURL(@RequestParam String url) {
+    @GetMapping("/{url}")
+    public ResponseEntity<Void> expandURL(@PathVariable("url") String url) {
+        log.info("Recevied request to expand URL " + url);
         return ResponseEntity.status(302).location(tinyURLService.expandURL(url)).build();
     }
+
 }

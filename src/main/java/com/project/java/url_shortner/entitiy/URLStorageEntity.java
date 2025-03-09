@@ -26,7 +26,7 @@ public class URLStorageEntity {
     @Column(name = "IPADDRESS", nullable = false)
     private String ipAddress;
     @Column(name = "VISITS", nullable = false)
-    private int noOfClicks;
+    private int visits;
     @Column(name = "LASTACCESSEDDATE")
     private String lastAccessedDate;
     @Column(name = "LASTACCESSEDIP")

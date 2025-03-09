@@ -13,7 +13,7 @@ public interface URLStorageMapper {
     @Mapping(target = "ipAddress", source = "request.ipAddress")
     @Mapping(target = "createdDate", expression = "java(java.time.LocalDateTime.now().toString())")
     @Mapping(target = "expiryDate", expression = "java(java.time.LocalDate.now().plusDays(30).toString())")
-    @Mapping(target = "noOfClicks", constant = "0")
+    @Mapping(target = "visits", constant = "0")
     @Mapping(target = "status", constant = "ACTIVE")
     @Mapping(target = "shortenedURL", expression = "java(baseUrl + shortId)")
     URLStorageEntity adaptNewUrlFromRequest(TinyURLRequest request, String shortId, String baseUrl);
